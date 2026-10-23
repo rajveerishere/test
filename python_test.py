@@ -53,7 +53,8 @@ if b == random_number:
 else :
     lives = lives - 1
     print(f"you have {lives} lives remeinging")
-print(f"your guesses were {z},")
+print(f"your guesses were {x},{y},{z},{a},{b}")
+print (f"random number was {random_number}")
 
 
 
