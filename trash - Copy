@@ -1,0 +1,6 @@
+
+y = int(input("how many paint bottles do you want to buy ? \n"))
+z = int(input("how many brushes do you want to buy ? \n"))
+a = int(input("how many canvases do you want to buy ? \n"))
+b = int(input("how many oil colours do you want to buy ? \n"))
+c = int(input("how many pencils do you want to buy ? \n"))
