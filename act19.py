@@ -6,4 +6,4 @@ def total_calc(x,y):
     return d 
 ans = total_calc(x,y)
 """hi """
-print("your total bill is : ",total_calc(x,y))
+print("your total bill is : ",ans)
