@@ -1,5 +1,45 @@
 print("Welcome to the bill maker module")
+no1 = 2
+no2 = 2
+no4 = 6
+def sitting(no1, no2, no4):
+    d = int(input("Enter the number of people in your group: "))
+    seated = False
 
+    if d < 1 or d > 4:
+        print("Not possible. Each group must have 1 to 4 people.")
+
+    elif d == 1:
+        if no1 > 0:
+            table_no = 3 - no1
+            no1 -= 1
+            print(f"You have occupied single-person table S{table_no}.")
+            print(f"Remaining single-person tables: {no1}")
+            seated = True
+        else:
+            print("Sorry, all single-person tables are occupied.")
+
+    elif d == 2:
+        if no2 > 0:
+            table_no = 3 - no2
+            no2 -= 1
+            print(f"You have occupied two-person table T{table_no}.")
+            print(f"Remaining two-person tables: {no2}")
+            seated = True
+        else:
+            print("Sorry, all two-person tables are occupied.")
+
+    elif d == 3 or d == 4:
+        if no4 > 0:
+            table_no = 7 - no4
+            no4 -= 1
+            print(f"You have occupied four-person table F{table_no}.")
+            print(f"Remaining four-person tables: {no4}")
+            seated = True
+        else:
+            print("Sorry, all four-person tables are occupied.")
+
+    return no1, no2, no4, seated
 
 def order_counter():
     itemno = int(input("Enter the number of items you had ordered: "))
@@ -41,11 +81,21 @@ def greeting(total_cost):
     else:
         print("Please visit our store again soon.")
 
+no1 = 2
+no2 = 2
+no4 = 6
 another = "yes"
 
 while another == "yes":
-    bill_maker()
-    another = input("\nIs there another customer? (yes/no): ").strip().lower()
+    no1, no2, no4, seated = sitting(no1, no2, no4)
+
+    if seated:
+        bill_maker()
+
+    another = input(
+        "\nIs there another customer? (yes/no): "
+    ).strip().lower()
 
 print("Bill maker closed.")
+
 
